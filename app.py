@@ -2,12 +2,18 @@ import streamlit as st
 import pandas as pd
 import joblib
 
+
+# ==========================================
+# LOAD MODEL
+# ==========================================
+
 model = joblib.load("career_model.pkl")
 
 
-# -----------------------------
-# Page Configuration
-# -----------------------------
+# ==========================================
+# PAGE CONFIGURATION
+# ==========================================
+
 st.set_page_config(
     page_title="AI Career Recommendation",
     page_icon="🎯",
@@ -15,30 +21,63 @@ st.set_page_config(
 )
 
 
-# -----------------------------
-# Title
-# -----------------------------
+# ==========================================
+# SIDEBAR
+# ==========================================
+
+st.sidebar.title("🎯 Career AI")
+
+st.sidebar.write(
+    """
+    ### AI Career Path Recommendation
+
+    This system analyzes your:
+
+    • Academic performance  
+    • Technical skills  
+    • Projects  
+    • Internship  
+    • Communication  
+    • Career interest  
+
+    and recommends suitable career paths.
+    """
+)
+
+st.sidebar.divider()
+
+st.sidebar.info(
+    "Educational project for career guidance."
+)
+
+
+# ==========================================
+# MAIN TITLE
+# ==========================================
+
 st.title("🎯 AI Career Path Recommendation System")
 
 st.write(
-    "Find suitable career paths based on your "
+    "Discover suitable career paths based on your "
     "skills, academic performance and interests."
 )
 
 st.divider()
 
 
-# -----------------------------
-# Student Profile
-# -----------------------------
+# ==========================================
+# STUDENT PROFILE
+# ==========================================
+
 st.subheader("👤 Student Profile")
 
 col1, col2 = st.columns(2)
 
 
-# -----------------------------
-# Column 1
-# -----------------------------
+# ==========================================
+# COLUMN 1
+# ==========================================
+
 with col1:
 
     cgpa = st.number_input(
@@ -50,65 +89,66 @@ with col1:
     )
 
     python = st.selectbox(
-        "Python",
+        "🐍 Python",
         ["No", "Yes"]
     )
 
     sql = st.selectbox(
-        "SQL",
+        "🗄️ SQL",
         ["No", "Yes"]
     )
 
     ml = st.selectbox(
-        "Machine Learning",
+        "🤖 Machine Learning",
         ["No", "Yes"]
     )
 
     powerbi = st.selectbox(
-        "Power BI",
+        "📊 Power BI",
         ["No", "Yes"]
     )
 
     java = st.selectbox(
-        "Java",
+        "☕ Java",
         ["No", "Yes"]
     )
 
 
-# -----------------------------
-# Column 2
-# -----------------------------
+# ==========================================
+# COLUMN 2
+# ==========================================
+
 with col2:
 
     cloud = st.selectbox(
-        "Cloud",
+        "☁️ Cloud",
         ["No", "Yes"]
     )
 
     cybersecurity = st.selectbox(
-        "Cybersecurity",
+        "🔐 Cybersecurity",
         ["No", "Yes"]
     )
 
     communication = st.selectbox(
-        "Communication Skills",
+        "💬 Communication Skills",
         ["No", "Yes"]
     )
 
     projects = st.number_input(
-        "Number of Projects",
+        "📁 Number of Projects",
         min_value=0,
         max_value=20,
         value=2
     )
 
     internship = st.selectbox(
-        "Internship",
+        "💼 Internship Experience",
         ["No", "Yes"]
     )
 
     interest = st.selectbox(
-        "Career Interest",
+        "❤️ Career Interest",
         [
             "AI",
             "Data",
@@ -120,18 +160,23 @@ with col2:
     )
 
 
+# ==========================================
+# PREDICTION BUTTON
+# ==========================================
+
 st.divider()
 
-
-# -----------------------------
-# Prediction Button
-# -----------------------------
-if st.button(
-    "🚀 Recommend Career",
+predict_button = st.button(
+    "🚀 RECOMMEND CAREER",
     use_container_width=True
-):
+)
 
-    # Convert Yes/No to 1/0
+
+# ==========================================
+# PREDICTION
+# ==========================================
+
+if predict_button:
 
     input_data = pd.DataFrame({
 
@@ -183,19 +228,59 @@ if st.button(
     })
 
 
-    # -----------------------------
-    # Prediction
-    # -----------------------------
+    # ======================================
+    # CAREER PREDICTION
+    # ======================================
 
     prediction = model.predict(input_data)[0]
 
 
-    # -----------------------------
-    # Display Result
-    # -----------------------------
+    st.divider()
 
     st.subheader("🎯 Career Recommendation")
 
     st.success(
         f"Recommended Career: {prediction}"
     )
+
+
+    # ======================================
+    # CAREER PROBABILITY
+    # ======================================
+
+    if hasattr(model, "predict_proba"):
+
+        probabilities = model.predict_proba(
+            input_data
+        )[0]
+
+        careers = model.classes_
+
+        results = pd.DataFrame({
+
+            "Career": careers,
+
+            "Match Score": probabilities * 100
+
+        })
+
+        results = results.sort_values(
+            "Match Score",
+            ascending=False
+        )
+
+        results["Match Score"] = results[
+            "Match Score"
+        ].round(2)
+
+
+        st.subheader("📊 Career Match")
+
+        st.bar_chart(
+            results.set_index("Career")
+        )
+
+        st.dataframe(
+            results,
+            use_container_width=True
+        )
