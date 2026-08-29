@@ -2,11 +2,7 @@ import streamlit as st
 import pandas as pd
 import joblib
 
-
-# -----------------------------
-# Load trained model
-# -----------------------------
-model = joblib.load("career_model.pkl")
+model = joblib.load("career_model (2).pkl")
 
 
 # -----------------------------
