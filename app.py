@@ -4,7 +4,7 @@ import joblib
 
 
 # ============================================================
-# LOAD MODEL
+# LOAD TRAINED MODEL
 # ============================================================
 
 model = joblib.load("career_model.pkl")
@@ -15,7 +15,7 @@ model = joblib.load("career_model.pkl")
 # ============================================================
 
 st.set_page_config(
-    page_title="AI Career Recommendation",
+    page_title="AI Career Recommendation System",
     page_icon="🎯",
     layout="wide"
 )
@@ -25,59 +25,32 @@ st.set_page_config(
 # CUSTOM CSS
 # ============================================================
 
-st.markdown("""
-<style>
-
-.main-title {
-    text-align: center;
-    font-size: 42px;
-    font-weight: bold;
-}
-
-.subtitle {
-    text-align: center;
-    font-size: 18px;
-}
-
-.result-box {
-    padding: 20px;
-    border-radius: 12px;
-    text-align: center;
-    border: 1px solid #ddd;
-}
-
-</style>
-""", unsafe_allow_html=True)
-
-
-# ============================================================
-# SIDEBAR
-# ============================================================
-
-st.sidebar.title("🎯 Career AI")
-
-st.sidebar.write("### Navigation")
-
-page = st.sidebar.radio(
-    "Go to",
-    [
-        "🏠 Home",
-        "🎯 Career Recommendation",
-        "🔍 Skill Gap Analysis",
-        "🗺️ Learning Roadmap",
-        "📊 Model Information"
-    ]
-)
-
-st.sidebar.divider()
-
-st.sidebar.info(
+st.markdown(
     """
-    This application uses Machine Learning
-    to recommend suitable career paths based
-    on student skills, academic performance,
-    projects, internship and interests.
-    """
+    <style>
+
+    .main-title {
+        text-align: center;
+        font-size: 42px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .subtitle {
+        text-align: center;
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+
+    .result-box {
+        padding: 20px;
+        border-radius: 15px;
+        text-align: center;
+    }
+
+    </style>
+    """,
+    unsafe_allow_html=True
 )
 
 
@@ -156,7 +129,8 @@ roadmaps = {
         "Machine Learning",
         "Data Visualization",
         "Deep Learning",
-        "Real-world Projects"
+        "Real-world Projects",
+        "Interview Preparation"
     ],
 
     "ML Engineer": [
@@ -178,7 +152,7 @@ roadmaps = {
         "Statistics",
         "Power BI",
         "Data Visualization",
-        "Projects"
+        "Dashboard Projects"
     ],
 
     "BI Developer": [
@@ -206,7 +180,7 @@ roadmaps = {
         "Linux",
         "Networking",
         "Cloud Fundamentals",
-        "AWS/Azure/GCP",
+        "AWS / Azure / GCP",
         "Docker",
         "DevOps"
     ],
@@ -216,7 +190,7 @@ roadmaps = {
         "Linux",
         "Cybersecurity Fundamentals",
         "Python",
-        "Ethical Security Concepts",
+        "Security Concepts",
         "Security Tools",
         "Security Projects"
     ],
@@ -235,6 +209,37 @@ roadmaps = {
 
 
 # ============================================================
+# SIDEBAR
+# ============================================================
+
+st.sidebar.title("🎯 Career AI")
+
+page = st.sidebar.radio(
+    "Navigation",
+    [
+        "🏠 Home",
+        "🎯 Career Recommendation",
+        "🔍 Skill Gap Analysis",
+        "🗺️ Learning Roadmap",
+        "📊 Model Information"
+    ]
+)
+
+st.sidebar.divider()
+
+st.sidebar.info(
+    """
+    AI Career Path Recommendation System
+
+    This application analyzes student
+    academic performance, technical skills,
+    projects, internship experience,
+    communication skills and interests.
+    """
+)
+
+
+# ============================================================
 # HOME PAGE
 # ============================================================
 
@@ -249,8 +254,7 @@ if page == "🏠 Home":
 
     st.markdown(
         '<div class="subtitle">'
-        'Find the career path that best matches your skills '
-        'and interests.'
+        'Personalized career recommendation using Machine Learning'
         '</div>',
         unsafe_allow_html=True
     )
@@ -260,18 +264,21 @@ if page == "🏠 Home":
     col1, col2, col3 = st.columns(3)
 
     with col1:
+
         st.metric(
-            "🤖 AI/ML",
+            "🤖 AI",
             "Career Prediction"
         )
 
     with col2:
+
         st.metric(
             "🔍 Skill",
             "Gap Analysis"
         )
 
     with col3:
+
         st.metric(
             "🗺️ Learning",
             "Roadmap"
@@ -279,35 +286,36 @@ if page == "🏠 Home":
 
     st.divider()
 
-    st.subheader("✨ How It Works")
+    st.subheader("✨ How This System Works")
 
-    st.write("""
-    **1️⃣ Enter your profile**
+    st.write(
+        """
+        **Step 1 — Student Profile**
 
-    Provide your CGPA, technical skills,
-    projects, internship experience and career interest.
+        Enter your CGPA, technical skills,
+        projects, internship and career interest.
 
-    **2️⃣ AI analyzes your profile**
+        **Step 2 — Machine Learning**
 
-    The trained Machine Learning model evaluates
-    your profile.
+        The trained ML model analyzes your profile.
 
-    **3️⃣ Get career recommendations**
+        **Step 3 — Career Recommendation**
 
-    The system recommends suitable career paths.
+        The system recommends suitable career paths.
 
-    **4️⃣ Identify your skill gap**
+        **Step 4 — Skill Gap Analysis**
 
-    See which skills you need to improve.
+        Identify the skills you need to improve.
 
-    **5️⃣ Follow your learning roadmap**
+        **Step 5 — Learning Roadmap**
 
-    Get a structured roadmap for your recommended career.
-    """)
+        Follow a career-specific learning roadmap.
+        """
+    )
 
     st.success(
-        "Go to '🎯 Career Recommendation' from the sidebar "
-        "to get started."
+        "Select '🎯 Career Recommendation' from the sidebar "
+        "to begin."
     )
 
 
@@ -320,13 +328,13 @@ elif page == "🎯 Career Recommendation":
     st.title("🎯 Career Recommendation")
 
     st.write(
-        "Enter your academic and technical information."
+        "Enter your academic performance, skills and interests."
     )
 
     st.divider()
 
     # --------------------------------------------------------
-    # INPUTS
+    # STUDENT INPUT
     # --------------------------------------------------------
 
     col1, col2 = st.columns(2)
@@ -409,16 +417,17 @@ elif page == "🎯 Career Recommendation":
 
     st.divider()
 
-    predict = st.button(
+    predict_button = st.button(
         "🚀 RECOMMEND MY CAREER",
         use_container_width=True
     )
 
-    # --------------------------------------------------------
-    # PREDICTION
-    # --------------------------------------------------------
 
-    if predict:
+    # ========================================================
+    # PREDICTION
+    # ========================================================
+
+    if predict_button:
 
         input_data = pd.DataFrame({
 
@@ -469,23 +478,27 @@ elif page == "🎯 Career Recommendation":
             ]
         })
 
-        # ----------------------------------------------------
-        # MODEL PREDICTION
-        # ----------------------------------------------------
 
-        prediction = model.predict(input_data)[0]
+        # ====================================================
+        # MODEL PREDICTION
+        # ====================================================
+
+        prediction = model.predict(
+            input_data
+        )[0]
 
         st.divider()
 
-        st.subheader("🏆 Your Recommended Career")
+        st.subheader("🏆 Recommended Career")
 
         st.success(
             f"🎯 {prediction}"
         )
 
-        # ----------------------------------------------------
-        # PROBABILITY
-        # ----------------------------------------------------
+
+        # ====================================================
+        # CAREER MATCH SCORE
+        # ====================================================
 
         if hasattr(model, "predict_proba"):
 
@@ -512,16 +525,118 @@ elif page == "🎯 Career Recommendation":
                 "Match Score (%)"
             ].round(2)
 
-            st.subheader("📊 Career Match Scores")
+            st.subheader(
+                "📊 Career Match Scores"
+            )
 
             st.bar_chart(
-                results.set_index("Career")
+                results.set_index("Career")[
+                    "Match Score (%)"
+                ]
             )
 
             st.dataframe(
                 results,
                 use_container_width=True,
                 hide_index=True
+            )
+
+
+        # ====================================================
+        # PLACEMENT READINESS
+        # ====================================================
+
+        st.divider()
+
+        st.subheader(
+            "🎯 Placement Readiness Score"
+        )
+
+        # Technical skills
+        technical_skills = sum([
+            python == "Yes",
+            sql == "Yes",
+            ml == "Yes",
+            powerbi == "Yes",
+            java == "Yes",
+            cloud == "Yes",
+            cybersecurity == "Yes"
+        ])
+
+        technical_score = (
+            technical_skills / 7
+        ) * 40
+
+        # Projects
+        project_score = min(
+            projects / 5,
+            1
+        ) * 20
+
+        # Internship
+        internship_score = (
+            15 if internship == "Yes"
+            else 0
+        )
+
+        # Communication
+        communication_score = (
+            15 if communication == "Yes"
+            else 0
+        )
+
+        # CGPA
+        cgpa_score = (
+            cgpa / 10
+        ) * 10
+
+        readiness = (
+            technical_score
+            + project_score
+            + internship_score
+            + communication_score
+            + cgpa_score
+        )
+
+        col1, col2, col3 = st.columns(3)
+
+        with col1:
+
+            st.metric(
+                "🎯 Readiness",
+                f"{readiness:.0f}/100"
+            )
+
+        with col2:
+
+            st.metric(
+                "💻 Technical Skills",
+                f"{technical_skills}/7"
+            )
+
+        with col3:
+
+            st.metric(
+                "📁 Projects",
+                projects
+            )
+
+        if readiness >= 80:
+
+            st.success(
+                "🌟 Excellent placement readiness!"
+            )
+
+        elif readiness >= 60:
+
+            st.info(
+                "👍 Good readiness. Continue improving your skills."
+            )
+
+        else:
+
+            st.warning(
+                "📚 More preparation is recommended."
             )
 
 
@@ -534,19 +649,20 @@ elif page == "🔍 Skill Gap Analysis":
     st.title("🔍 Skill Gap Analysis")
 
     st.write(
-        "Select your recommended career to see "
-        "which skills you should develop."
+        "Find out which skills you need for your target career."
     )
 
     career = st.selectbox(
-        "Select Career",
+        "🎯 Select Career",
         list(career_skills.keys())
     )
 
-    required_skills = career_skills[career]
+    required_skills = career_skills[
+        career
+    ]
 
     st.subheader(
-        f"🎯 Skills Required for {career}"
+        f"📚 Skills Required for {career}"
     )
 
     for skill in required_skills:
@@ -557,7 +673,9 @@ elif page == "🔍 Skill Gap Analysis":
 
     st.divider()
 
-    st.subheader("👤 Enter Your Current Skills")
+    st.subheader(
+        "👤 Enter Your Current Skills"
+    )
 
     skill_status = {}
 
@@ -566,13 +684,15 @@ elif page == "🔍 Skill Gap Analysis":
         skill_status[skill] = st.selectbox(
             f"Do you know {skill}?",
             ["No", "Yes"],
-            key=f"skill_{skill}"
+            key=f"skill_{career}_{skill}"
         )
 
-    if st.button(
-        "🔍 Analyze Skill Gap",
+    analyze_button = st.button(
+        "🔍 ANALYZE MY SKILL GAP",
         use_container_width=True
-    ):
+    )
+
+    if analyze_button:
 
         current_skills = []
 
@@ -582,56 +702,91 @@ elif page == "🔍 Skill Gap Analysis":
 
             if skill_status[skill] == "Yes":
 
-                current_skills.append(skill)
+                current_skills.append(
+                    skill
+                )
 
             else:
 
-                missing_skills.append(skill)
+                missing_skills.append(
+                    skill
+                )
 
         st.divider()
-
-        st.subheader("📋 Analysis Result")
 
         col1, col2 = st.columns(2)
 
         with col1:
 
-            st.success(
-                f"✅ Skills You Have: "
-                f"{len(current_skills)}"
+            st.subheader(
+                "✅ Skills You Have"
             )
 
-            for skill in current_skills:
+            if current_skills:
+
+                for skill in current_skills:
+
+                    st.write(
+                        f"✅ {skill}"
+                    )
+
+            else:
 
                 st.write(
-                    f"✅ {skill}"
+                    "No matching skills selected."
                 )
 
         with col2:
 
-            st.error(
-                f"❌ Skills to Improve: "
-                f"{len(missing_skills)}"
+            st.subheader(
+                "❌ Skills to Improve"
             )
 
-            for skill in missing_skills:
+            if missing_skills:
+
+                for skill in missing_skills:
+
+                    st.write(
+                        f"❌ {skill}"
+                    )
+
+            else:
 
                 st.write(
-                    f"❌ {skill}"
+                    "No missing skills!"
                 )
 
-        if missing_skills:
+        st.divider()
 
-            st.warning(
-                "Focus on the missing skills to "
-                "improve your career readiness."
+        total = len(required_skills)
+
+        acquired = len(current_skills)
+
+        percentage = (
+            acquired / total
+        ) * 100
+
+        st.metric(
+            "Skill Match",
+            f"{percentage:.0f}%"
+        )
+
+        if percentage >= 80:
+
+            st.success(
+                "🌟 Excellent skill match!"
+            )
+
+        elif percentage >= 50:
+
+            st.info(
+                "👍 Good start. Work on the missing skills."
             )
 
         else:
 
-            st.success(
-                "🎉 You have all the listed skills "
-                "for this career!"
+            st.warning(
+                "📚 You should focus on developing the required skills."
             )
 
 
@@ -641,18 +796,26 @@ elif page == "🔍 Skill Gap Analysis":
 
 elif page == "🗺️ Learning Roadmap":
 
-    st.title("🗺️ Personalized Learning Roadmap")
+    st.title(
+        "🗺️ Personalized Learning Roadmap"
+    )
+
+    st.write(
+        "Follow these steps to prepare for your selected career."
+    )
 
     career = st.selectbox(
-        "Select Your Career",
+        "🎯 Select Career",
         list(roadmaps.keys())
     )
+
+    roadmap = roadmaps[
+        career
+    ]
 
     st.subheader(
         f"🚀 Roadmap for {career}"
     )
-
-    roadmap = roadmaps[career]
 
     for i, skill in enumerate(
         roadmap,
@@ -667,9 +830,10 @@ elif page == "🗺️ Learning Roadmap":
 
             st.write("⬇️")
 
+    st.divider()
+
     st.success(
-        "Complete these steps one by one and "
-        "build projects alongside your learning."
+        "💡 Build projects while learning each skill."
     )
 
 
@@ -679,18 +843,27 @@ elif page == "🗺️ Learning Roadmap":
 
 elif page == "📊 Model Information":
 
-    st.title("📊 Model Information")
+    st.title(
+        "📊 Model Information"
+    )
 
-    st.subheader("🤖 Machine Learning Model")
+    st.subheader(
+        "🤖 Machine Learning"
+    )
 
     st.write(
-        "The application uses the trained Machine Learning "
-        "model stored in `career_model.pkl`."
+        """
+        The application uses a trained Machine Learning
+        classification model to recommend a suitable
+        career based on the student's profile.
+        """
     )
 
     st.divider()
 
-    st.subheader("📥 Input Features")
+    st.subheader(
+        "📥 Input Features"
+    )
 
     features = [
         "CGPA",
@@ -715,24 +888,31 @@ elif page == "📊 Model Information":
 
     st.divider()
 
-    st.subheader("🎯 Target Variable")
+    st.subheader(
+        "🎯 Target Variable"
+    )
 
     st.info(
         "Career"
     )
 
     st.write(
-        "The model predicts the Career category "
-        "based on the student's profile."
+        """
+        The model predicts the Career category
+        using the student's profile.
+        """
     )
 
     st.divider()
 
-    st.subheader("⚠️ Important Note")
+    st.subheader(
+        "⚠️ Disclaimer"
+    )
 
     st.warning(
-        "This application is an educational project. "
-        "Career recommendations should be treated as "
-        "guidance rather than a guaranteed prediction "
-        "of future employment."
+        """
+        This application is an educational project.
+        Career recommendations are guidance and are
+        not a guarantee of employment or career success.
+        """
     )
