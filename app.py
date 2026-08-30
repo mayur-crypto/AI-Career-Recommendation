@@ -24,209 +24,147 @@ st.set_page_config(
 # CUSTOM CSS
 # ============================================================
 
-st.markdown("""
-<style>
+st.markdown(
+    """
+    <style>
 
-.stApp {
-    background-color: #0e1726;
-    color: white;
-}
+    /* Main application */
 
-section[data-testid="stSidebar"] {
-    background-color: #151d2e;
-}
+    .stApp {
+        background-color: #0e1726;
+    }
 
-.main-title {
-    font-size: 38px;
-    font-weight: 800;
-    color: white;
-    margin-bottom: 5px;
-}
 
-.subtitle {
-    color: #9ca8bc;
-    font-size: 16px;
-    margin-bottom: 25px;
-}
+    /* Sidebar */
 
-.card {
-    background-color: #182236;
-    border: 1px solid #303c52;
-    border-radius: 16px;
-    padding: 22px;
-    margin-bottom: 18px;
-}
+    section[data-testid="stSidebar"] {
+        background-color: #151d2e;
+    }
 
-.card-title {
-    font-size: 20px;
-    font-weight: 700;
-    color: white;
-    margin-bottom: 10px;
-}
 
-.metric-card {
-    background-color: #182236;
-    border: 1px solid #303c52;
-    border-radius: 16px;
-    padding: 20px;
-    text-align: center;
-    min-height: 120px;
-}
+    /* Main title */
 
-.metric-number {
-    font-size: 28px;
-    font-weight: 800;
-    color: white;
-}
+    .main-title {
+        font-size: 40px;
+        font-weight: 800;
+        color: white;
+        margin-bottom: 5px;
+    }
 
-.metric-label {
-    color: #9ca8bc;
-    font-size: 14px;
-    margin-top: 5px;
-}
 
-.developer-card {
-    display: flex;
-    align-items: center;
-    gap: 22px;
-    padding: 26px;
-    margin: 25px 0;
-    border-radius: 18px;
-    background-color: #182236;
-    border: 1px solid #3b4e6b;
-}
+    .subtitle {
+        color: #9ca8bc;
+        font-size: 17px;
+        margin-bottom: 25px;
+    }
 
-.developer-icon {
-    width: 75px;
-    height: 75px;
-    min-width: 75px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background-color: #405de6;
-    font-size: 34px;
-}
 
-.developer-label {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    color: #8fa5c7;
-}
+    /* Developer card */
 
-.developer-name {
-    font-size: 30px;
-    font-weight: 800;
-    color: white;
-    margin-top: 4px;
-}
+    .developer-card {
+        background-color: #182236;
+        border: 1px solid #3b4e6b;
+        border-radius: 18px;
+        padding: 25px;
+        margin: 20px 0;
+    }
 
-.developer-role {
-    color: #aebdd3;
-    font-size: 14px;
-    margin-top: 4px;
-}
 
-.developer-project {
-    color: #dce6f5;
-    font-size: 13px;
-    margin-top: 10px;
-}
+    .developer-label {
+        color: #8fa5c7;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 2px;
+    }
 
-.prediction-card {
-    background-color: #172d46;
-    border: 1px solid #3c6c9f;
-    border-radius: 18px;
-    padding: 30px;
-    text-align: center;
-    margin: 20px 0;
-}
 
-.prediction-label {
-    color: #9fb4cc;
-    font-size: 13px;
-    letter-spacing: 1px;
-}
+    .developer-name {
+        color: white;
+        font-size: 32px;
+        font-weight: 800;
+        margin-top: 5px;
+    }
 
-.prediction-career {
-    color: white;
-    font-size: 36px;
-    font-weight: 800;
-    margin: 10px 0;
-}
 
-.prediction-description {
-    color: #a9bad0;
-    font-size: 14px;
-}
+    .developer-role {
+        color: #aebdd3;
+        font-size: 15px;
+        margin-top: 5px;
+    }
 
-.skill-have {
-    display: inline-block;
-    background-color: #153d31;
-    border: 1px solid #2d765e;
-    color: #7ee2bf;
-    padding: 7px 12px;
-    border-radius: 20px;
-    margin: 4px;
-}
 
-.skill-missing {
-    display: inline-block;
-    background-color: #402a2a;
-    border: 1px solid #754848;
-    color: #ffaaaa;
-    padding: 7px 12px;
-    border-radius: 20px;
-    margin: 4px;
-}
+    .developer-project {
+        color: #dce6f5;
+        font-size: 14px;
+        margin-top: 12px;
+    }
 
-.roadmap-item {
-    background-color: #182236;
-    border: 1px solid #303c52;
-    border-left: 4px solid #668cff;
-    border-radius: 10px;
-    padding: 16px 20px;
-    margin: 10px 0;
-}
 
-.roadmap-step {
-    color: #7e9cff;
-    font-size: 12px;
-    font-weight: 800;
-}
+    /* Prediction */
 
-.roadmap-topic {
-    color: white;
-    font-size: 16px;
-    font-weight: 600;
-    margin-top: 4px;
-}
+    .prediction-card {
+        background-color: #172d46;
+        border: 1px solid #3c6c9f;
+        border-radius: 18px;
+        padding: 30px;
+        text-align: center;
+        margin: 25px 0;
+    }
 
-.footer {
-    text-align: center;
-    color: #78859a;
-    padding: 35px 0 15px 0;
-    font-size: 13px;
-}
 
-</style>
-""", unsafe_allow_html=True)
+    .prediction-label {
+        color: #9fb4cc;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 2px;
+    }
+
+
+    .prediction-career {
+        color: white;
+        font-size: 38px;
+        font-weight: 800;
+        margin: 10px 0;
+    }
+
+
+    .prediction-description {
+        color: #a9bad0;
+        font-size: 14px;
+    }
+
+
+    /* Footer */
+
+    .footer {
+        text-align: center;
+        color: #78859a;
+        padding: 35px 0 15px 0;
+        font-size: 13px;
+    }
+
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 
 # ============================================================
-# LOAD DATASET AND TRAIN MODEL
+# DATASET + MODEL
 # ============================================================
 
 @st.cache_resource
 def train_model():
 
+    # Load dataset
     df = pd.read_csv(
         "career_recommendation_dataset_500.csv"
     )
 
+    # Remove empty rows
     df = df.dropna()
 
+    # Separate input and target
     X = df.drop(
         "Career",
         axis=1
@@ -234,19 +172,26 @@ def train_model():
 
     y = df["Career"]
 
+    # Categorical column
+    categorical_columns = [
+        "Interest"
+    ]
+
+    # Preprocessing
     preprocessor = ColumnTransformer(
         transformers=[
             (
-                "interest",
+                "categorical",
                 OneHotEncoder(
                     handle_unknown="ignore"
                 ),
-                ["Interest"]
+                categorical_columns
             )
         ],
         remainder="passthrough"
     )
 
+    # Split data
     X_train, X_test, y_train, y_test = train_test_split(
         X,
         y,
@@ -255,14 +200,16 @@ def train_model():
         stratify=y
     )
 
+    # Random Forest model
     model = Pipeline(
         steps=[
             (
                 "preprocessor",
                 preprocessor
             ),
+
             (
-                "model",
+                "classifier",
                 RandomForestClassifier(
                     n_estimators=200,
                     random_state=42
@@ -271,11 +218,13 @@ def train_model():
         ]
     )
 
+    # Train
     model.fit(
         X_train,
         y_train
     )
 
+    # Accuracy
     accuracy = model.score(
         X_test,
         y_test
@@ -284,6 +233,7 @@ def train_model():
     return model, accuracy, df
 
 
+# Train model
 model, model_accuracy, dataset = train_model()
 
 
@@ -292,27 +242,6 @@ model, model_accuracy, dataset = train_model()
 # ============================================================
 
 career_skills = {
-
-    "BI Developer": [
-        "SQL",
-        "Power BI",
-        "Data Visualization",
-        "DAX"
-    ],
-
-    "Cybersecurity Analyst": [
-        "Cybersecurity",
-        "Python",
-        "Networking",
-        "Linux"
-    ],
-
-    "Data Analyst": [
-        "Python",
-        "SQL",
-        "Power BI",
-        "Statistics"
-    ],
 
     "Data Scientist": [
         "Python",
@@ -329,6 +258,27 @@ career_skills = {
         "Deep Learning"
     ],
 
+    "Data Analyst": [
+        "Python",
+        "SQL",
+        "Power BI",
+        "Statistics"
+    ],
+
+    "BI Developer": [
+        "SQL",
+        "Power BI",
+        "Data Visualization",
+        "DAX"
+    ],
+
+    "Cybersecurity Analyst": [
+        "Cybersecurity",
+        "Python",
+        "Networking",
+        "Linux"
+    ],
+
     "Software Developer": [
         "Java",
         "Python",
@@ -339,40 +289,10 @@ career_skills = {
 
 
 # ============================================================
-# LEARNING ROADMAPS
+# LEARNING ROADMAP
 # ============================================================
 
 roadmaps = {
-
-    "BI Developer": [
-        "SQL",
-        "Excel",
-        "Power BI",
-        "DAX",
-        "Data Modeling",
-        "Dashboard Development",
-        "BI Projects"
-    ],
-
-    "Cybersecurity Analyst": [
-        "Computer Networks",
-        "Linux",
-        "Cybersecurity Fundamentals",
-        "Python",
-        "Security Tools",
-        "Security Projects"
-    ],
-
-    "Data Analyst": [
-        "Excel",
-        "SQL",
-        "Python",
-        "Pandas",
-        "Statistics",
-        "Power BI",
-        "Data Visualization",
-        "Data Analysis Projects"
-    ],
 
     "Data Scientist": [
         "Python",
@@ -396,6 +316,36 @@ roadmaps = {
         "ML Projects"
     ],
 
+    "Data Analyst": [
+        "Excel",
+        "SQL",
+        "Python",
+        "Pandas",
+        "Statistics",
+        "Power BI",
+        "Data Visualization",
+        "Data Analysis Projects"
+    ],
+
+    "BI Developer": [
+        "SQL",
+        "Excel",
+        "Power BI",
+        "DAX",
+        "Data Modeling",
+        "Dashboard Development",
+        "BI Projects"
+    ],
+
+    "Cybersecurity Analyst": [
+        "Computer Networks",
+        "Linux",
+        "Cybersecurity Fundamentals",
+        "Python",
+        "Security Tools",
+        "Security Projects"
+    ],
+
     "Software Developer": [
         "Programming Fundamentals",
         "Python / Java",
@@ -413,99 +363,67 @@ roadmaps = {
 # SIDEBAR
 # ============================================================
 
-st.sidebar.markdown(
-    """
-    <div style="
-        text-align:center;
-        padding:10px 0 20px 0;
-    ">
+with st.sidebar:
 
-        <div style="font-size:42px;">
-            🎯
-        </div>
+    st.title("🎯 Career AI")
 
-        <div style="
-            font-size:23px;
-            font-weight:800;
-            color:white;
-        ">
-            Career AI
-        </div>
+    st.caption(
+        "SMART CAREER GUIDANCE"
+    )
 
-        <div style="
-            font-size:11px;
-            color:#8fa5c7;
-            margin-top:5px;
-            letter-spacing:1px;
-        ">
-            SMART CAREER GUIDANCE
-        </div>
+    st.divider()
 
-    </div>
-    """,
-    unsafe_allow_html=True
-)
+    st.markdown(
+        "### 👨‍💻 Developer"
+    )
 
+    st.markdown(
+        "**Mayur Yadav**"
+    )
 
-st.sidebar.markdown(
-    """
-    <div style="
-        text-align:center;
-        padding:14px;
-        margin-bottom:15px;
-        border-radius:12px;
-        background-color:#182236;
-        border:1px solid #303c52;
-    ">
+    st.caption(
+        "Artificial Intelligence & Data Science"
+    )
 
-        <div style="font-size:25px;">
-            👨‍💻
-        </div>
+    st.divider()
 
-        <b style="color:white;">
-            Mayur Yadav
-        </b>
+    page = st.radio(
+        "Navigation",
+        [
+            "🏠 Home",
+            "🎯 Career Recommendation",
+            "🔍 Skill Gap Analysis",
+            "🗺️ Learning Roadmap",
+            "📊 Model Information"
+        ]
+    )
 
-        <br>
+    st.divider()
 
-        <span style="
-            font-size:11px;
-            color:#9aaac0;
-        ">
-            AI & Data Science
-        </span>
+    st.info(
+        """
+        **AI Career Path Recommendation System**
 
-    </div>
-    """,
-    unsafe_allow_html=True
-)
+        The system analyzes:
 
+        • CGPA  
+        • Technical skills  
+        • Projects  
+        • Internship  
+        • Communication  
+        • Career interest
+        """
+    )
 
-page = st.sidebar.radio(
-    "Navigation",
-    [
-        "🏠 Home",
-        "🎯 Career Recommendation",
-        "🔍 Skill Gap Analysis",
-        "🗺️ Learning Roadmap",
-        "📊 Model Information"
-    ]
-)
+    st.divider()
 
+    st.caption(
+        "🎓 Student Project"
+    )
 
-st.sidebar.divider()
-
-
-st.sidebar.info(
-    """
-    **AI Career Path Recommendation System**
-
-    This application analyzes student
-    academic performance, technical skills,
-    projects, internship experience,
-    communication skills and interests.
-    """
-)
+    st.caption(
+        "Developed by Mayur Yadav"
+    )
 
 
 # ============================================================
@@ -529,40 +447,28 @@ if page == "🏠 Home":
     )
 
 
-    # Developer card
+    # Developer section
 
-    st.markdown(
-        """
-        <div class="developer-card">
+    with st.container(border=True):
 
-            <div class="developer-icon">
-                👨‍💻
-            </div>
+        st.markdown(
+            "### 👨‍💻 Project Developed By"
+        )
 
-            <div>
+        st.markdown(
+            "# Mayur Yadav"
+        )
 
-                <div class="developer-label">
-                    PROJECT DEVELOPED BY
-                </div>
+        st.write(
+            "Artificial Intelligence & Data Science"
+        )
 
-                <div class="developer-name">
-                    Mayur Yadav
-                </div>
+        st.caption(
+            "🎯 AI Career Path Recommendation System"
+        )
 
-                <div class="developer-role">
-                    Artificial Intelligence & Data Science
-                </div>
 
-                <div class="developer-project">
-                    🎯 AI Career Path Recommendation System
-                </div>
-
-            </div>
-
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
+    st.write("")
 
 
     # Dashboard metrics
@@ -572,179 +478,145 @@ if page == "🏠 Home":
 
     with col1:
 
-        st.markdown(
-            """
-            <div class="metric-card">
-
-                <div class="metric-number">
-                    🤖
-                </div>
-
-                <div class="metric-label">
-                    AI Recommendation
-                </div>
-
-            </div>
-            """,
-            unsafe_allow_html=True
+        st.metric(
+            "🤖 AI System",
+            "ML Powered"
         )
 
 
     with col2:
 
-        st.markdown(
-            f"""
-            <div class="metric-card">
-
-                <div class="metric-number">
-                    {len(dataset)}
-                </div>
-
-                <div class="metric-label">
-                    Dataset Records
-                </div>
-
-            </div>
-            """,
-            unsafe_allow_html=True
+        st.metric(
+            "📚 Dataset Records",
+            len(dataset)
         )
 
 
     with col3:
 
-        st.markdown(
-            f"""
-            <div class="metric-card">
-
-                <div class="metric-number">
-                    {len(model.classes_)}
-                </div>
-
-                <div class="metric-label">
-                    Career Paths
-                </div>
-
-            </div>
-            """,
-            unsafe_allow_html=True
+        st.metric(
+            "🎯 Career Paths",
+            len(model.classes_)
         )
 
 
     with col4:
 
-        st.markdown(
-            f"""
-            <div class="metric-card">
-
-                <div class="metric-number">
-                    {model_accuracy * 100:.1f}%
-                </div>
-
-                <div class="metric-label">
-                    Model Accuracy
-                </div>
-
-            </div>
-            """,
-            unsafe_allow_html=True
+        st.metric(
+            "📊 Model Accuracy",
+            f"{model_accuracy * 100:.1f}%"
         )
 
 
-    st.markdown("<br>", unsafe_allow_html=True)
+    st.divider()
 
 
-    # About project
+    # About
 
-    st.markdown(
-        """
-        <div class="card">
-
-            <div class="card-title">
-                📋 About This Project
-            </div>
-
-            <p>
-            The AI Career Path Recommendation System is a
-            Machine Learning based application designed to
-            help students identify suitable career paths.
-            </p>
-
-            <p>
-            The system analyzes CGPA, technical skills,
-            projects, internship experience, communication
-            skills and career interests.
-            </p>
-
-        </div>
-        """,
-        unsafe_allow_html=True
+    st.subheader(
+        "📋 About This Project"
     )
+
+    st.write(
+        """
+        The AI Career Path Recommendation System is a
+        Machine Learning based application designed to
+        help students identify suitable career paths.
+
+        It analyzes academic performance, technical skills,
+        projects, internship experience, communication skills
+        and career interests to recommend a suitable career.
+        """
+    )
+
+
+    # Career paths
+
+    st.subheader(
+        "🚀 Available Career Paths"
+    )
+
+    careers = list(model.classes_)
+
+    columns = st.columns(3)
+
+    for i, career in enumerate(careers):
+
+        with columns[i % 3]:
+
+            with st.container(border=True):
+
+                st.markdown(
+                    f"### 🎯 {career}"
+                )
+
+                required = career_skills.get(
+                    career,
+                    []
+                )
+
+                st.caption(
+                    f"{len(required)} key skills"
+                )
+
+
+    st.divider()
 
 
     # How system works
 
-    st.subheader("✨ How This System Works")
-
+    st.subheader(
+        "✨ How This System Works"
+    )
 
     steps = [
         (
-            "1",
+            "1️⃣",
             "Student Profile",
             "Enter CGPA, technical skills, projects, internship and career interest."
         ),
+
         (
-            "2",
+            "2️⃣",
             "Machine Learning",
-            "The Random Forest model analyzes the student's profile."
+            "Random Forest analyzes the student's profile."
         ),
+
         (
-            "3",
+            "3️⃣",
             "Career Recommendation",
-            "The system predicts the most suitable career."
+            "The model predicts the most suitable career."
         ),
+
         (
-            "4",
+            "4️⃣",
             "Skill Gap Analysis",
             "Identify skills that need improvement."
         ),
+
         (
-            "5",
+            "5️⃣",
             "Learning Roadmap",
-            "Follow a structured roadmap for the selected career."
+            "Follow a structured path for the selected career."
         )
     ]
 
 
-    for number, title, description in steps:
+    for icon, title, description in steps:
 
-        st.markdown(
-            f"""
-            <div class="roadmap-item">
+        with st.container(border=True):
 
-                <div class="roadmap-step">
-                    STEP {number}
-                </div>
+            st.markdown(
+                f"### {icon} {title}"
+            )
 
-                <div class="roadmap-topic">
-                    {title}
-                </div>
-
-                <div style="
-                    color:#9ca8bc;
-                    margin-top:5px;
-                    font-size:14px;
-                ">
-                    {description}
-                </div>
-
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
+            st.write(
+                description
+            )
 
 
     st.success(
-        "Select '🎯 Career Recommendation' from the sidebar to begin."
+        "Select '🎯 Career Recommendation' from the sidebar to start."
     )
 
 
@@ -763,17 +635,23 @@ elif page == "🎯 Career Recommendation":
 
     st.markdown(
         '<div class="subtitle">'
-        'Enter your profile and receive an AI-powered career recommendation'
+        'Enter your profile to receive an AI-based recommendation'
         '</div>',
         unsafe_allow_html=True
     )
 
 
-    st.subheader("📚 Student Profile")
+    st.subheader(
+        "📚 Student Academic Profile"
+    )
 
 
     col1, col2 = st.columns(2)
 
+
+    # --------------------------------------------------------
+    # LEFT COLUMN
+    # --------------------------------------------------------
 
     with col1:
 
@@ -811,6 +689,10 @@ elif page == "🎯 Career Recommendation":
         )
 
 
+    # --------------------------------------------------------
+    # RIGHT COLUMN
+    # --------------------------------------------------------
+
     with col2:
 
         cloud = st.selectbox(
@@ -840,37 +722,44 @@ elif page == "🎯 Career Recommendation":
             ["No", "Yes"]
         )
 
-        interest = st.selectbox(
-            "❤️ Career Interest",
-            [
-                "AI",
-                "Data",
-                "Software",
-                "Business",
-                "Cloud",
-                "Cybersecurity"
-            ]
+
+        # Get actual interests from dataset
+
+        interests = sorted(
+            dataset["Interest"]
+            .astype(str)
+            .unique()
+            .tolist()
         )
 
 
-    st.markdown("<br>", unsafe_allow_html=True)
+        interest = st.selectbox(
+            "❤️ Career Interest",
+            interests
+        )
 
 
-    predict_button = st.button(
+    st.write("")
+
+
+    predict = st.button(
         "🚀 RECOMMEND MY CAREER",
-        use_container_width=True
+        use_container_width=True,
+        type="primary"
     )
 
 
-    # ========================================================
-    # PREDICTION
-    # ========================================================
+    if predict:
 
-    if predict_button:
+        # ----------------------------------------------------
+        # CREATE INPUT DATA
+        # ----------------------------------------------------
 
         input_data = pd.DataFrame({
 
-            "CGPA": [cgpa],
+            "CGPA": [
+                cgpa
+            ],
 
             "Python": [
                 1 if python == "Yes" else 0
@@ -915,9 +804,12 @@ elif page == "🎯 Career Recommendation":
             "Interest": [
                 interest
             ]
-
         })
 
+
+        # ----------------------------------------------------
+        # PREDICTION
+        # ----------------------------------------------------
 
         prediction = model.predict(
             input_data
@@ -950,113 +842,81 @@ elif page == "🎯 Career Recommendation":
         best_score = results.iloc[0]["Match Score"]
 
 
-        # Prediction card
+        # ----------------------------------------------------
+        # RESULT CARD
+        # ----------------------------------------------------
 
-        st.markdown(
-            f"""
-            <div class="prediction-card">
+        with st.container(border=True):
 
-                <div class="prediction-label">
-                    AI RECOMMENDATION
-                </div>
+            st.markdown(
+                "### 📋 AI RECOMMENDATION"
+            )
 
-                <div class="prediction-career">
-                    🎯 {prediction}
-                </div>
+            st.markdown(
+                f"# 🎯 {prediction}"
+            )
 
-                <div class="prediction-description">
-                    Your profile shows the strongest match
-                    with this career path.
-                </div>
-
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
+            st.write(
+                "Your profile shows the strongest match "
+                "with this career path."
+            )
 
 
-        # Metrics
+        st.write("")
+
+
+        # ----------------------------------------------------
+        # RESULT METRICS
+        # ----------------------------------------------------
+
+        technical_skills = sum([
+            python == "Yes",
+            sql == "Yes",
+            ml == "Yes",
+            powerbi == "Yes",
+            java == "Yes",
+            cloud == "Yes",
+            cybersecurity == "Yes"
+        ])
+
 
         col1, col2, col3 = st.columns(3)
 
 
         with col1:
 
-            st.markdown(
-                f"""
-                <div class="metric-card">
-
-                    <div class="metric-number">
-                        {best_score:.1f}%
-                    </div>
-
-                    <div class="metric-label">
-                        Career Match
-                    </div>
-
-                </div>
-                """,
-                unsafe_allow_html=True
+            st.metric(
+                "🎯 Career Match",
+                f"{best_score:.1f}%"
             )
 
 
         with col2:
 
-            technical_skills = sum([
-                python == "Yes",
-                sql == "Yes",
-                ml == "Yes",
-                powerbi == "Yes",
-                java == "Yes",
-                cloud == "Yes",
-                cybersecurity == "Yes"
-            ])
-
-
-            st.markdown(
-                f"""
-                <div class="metric-card">
-
-                    <div class="metric-number">
-                        {technical_skills}/7
-                    </div>
-
-                    <div class="metric-label">
-                        Technical Skills
-                    </div>
-
-                </div>
-                """,
-                unsafe_allow_html=True
+            st.metric(
+                "💻 Technical Skills",
+                f"{technical_skills}/7"
             )
 
 
         with col3:
 
-            st.markdown(
-                f"""
-                <div class="metric-card">
-
-                    <div class="metric-number">
-                        {projects}
-                    </div>
-
-                    <div class="metric-label">
-                        Projects
-                    </div>
-
-                </div>
-                """,
-                unsafe_allow_html=True
+            st.metric(
+                "📁 Projects",
+                projects
             )
 
 
-        st.markdown("<br>", unsafe_allow_html=True)
+        st.divider()
 
 
-        # Match scores
+        # ----------------------------------------------------
+        # CAREER MATCH CHART
+        # ----------------------------------------------------
 
-        st.subheader("📊 Career Match Scores")
+        st.subheader(
+            "📊 Career Match Scores"
+        )
 
 
         chart_data = results.set_index(
@@ -1066,6 +926,15 @@ elif page == "🎯 Career Recommendation":
 
         st.bar_chart(
             chart_data
+        )
+
+
+        # ----------------------------------------------------
+        # CAREER TABLE
+        # ----------------------------------------------------
+
+        st.subheader(
+            "📋 Detailed Career Comparison"
         )
 
 
@@ -1084,12 +953,45 @@ elif page == "🎯 Career Recommendation":
         )
 
 
-        # Placement readiness
+        # ----------------------------------------------------
+        # RECOMMENDED SKILLS
+        # ----------------------------------------------------
 
         st.divider()
 
         st.subheader(
-            "🎯 Placement Readiness Score"
+            f"📚 Important Skills for {prediction}"
+        )
+
+
+        recommended_skills = career_skills.get(
+            prediction,
+            []
+        )
+
+
+        skill_columns = st.columns(3)
+
+
+        for i, skill in enumerate(
+            recommended_skills
+        ):
+
+            with skill_columns[i % 3]:
+
+                st.info(
+                    f"💡 {skill}"
+                )
+
+
+        # ----------------------------------------------------
+        # PLACEMENT READINESS
+        # ----------------------------------------------------
+
+        st.divider()
+
+        st.subheader(
+            "🎯 Placement Readiness"
         )
 
 
@@ -1152,16 +1054,16 @@ elif page == "🎯 Career Recommendation":
         with col2:
 
             st.metric(
-                "💻 Technical Skills",
-                f"{technical_skills}/7"
+                "💼 Internship",
+                internship
             )
 
 
         with col3:
 
             st.metric(
-                "📁 Projects",
-                projects
+                "💬 Communication",
+                communication
             )
 
 
@@ -1204,7 +1106,7 @@ elif page == "🔍 Skill Gap Analysis":
 
     st.markdown(
         '<div class="subtitle">'
-        'Discover which skills you need to improve'
+        'Identify the skills you need to improve for your target career'
         '</div>',
         unsafe_allow_html=True
     )
@@ -1249,17 +1151,18 @@ elif page == "🔍 Skill Gap Analysis":
         skill_status[skill] = st.selectbox(
             f"Do you know {skill}?",
             ["No", "Yes"],
-            key=f"{career}_{skill}"
+            key=f"skill_{career}_{skill}"
         )
 
 
-    analyze_button = st.button(
-        "🔍 ANALYZE MY SKILL GAP",
-        use_container_width=True
+    analyze = st.button(
+        "🔍 ANALYZE SKILL GAP",
+        use_container_width=True,
+        type="primary"
     )
 
 
-    if analyze_button:
+    if analyze:
 
         current_skills = []
 
@@ -1291,7 +1194,7 @@ elif page == "🔍 Skill Gap Analysis":
 
 
         st.subheader(
-            "📊 Skill Match"
+            "📊 Your Skill Match"
         )
 
 
@@ -1320,13 +1223,8 @@ elif page == "🔍 Skill Gap Analysis":
 
                 for skill in current_skills:
 
-                    st.markdown(
-                        f"""
-                        <span class="skill-have">
-                        ✓ {skill}
-                        </span>
-                        """,
-                        unsafe_allow_html=True
+                    st.success(
+                        f"✓ {skill}"
                     )
 
             else:
@@ -1339,7 +1237,7 @@ elif page == "🔍 Skill Gap Analysis":
         with col2:
 
             st.markdown(
-                "### ❌ Skills to Improve"
+                "### 📚 Skills to Improve"
             )
 
 
@@ -1347,13 +1245,8 @@ elif page == "🔍 Skill Gap Analysis":
 
                 for skill in missing_skills:
 
-                    st.markdown(
-                        f"""
-                        <span class="skill-missing">
-                        ✗ {skill}
-                        </span>
-                        """,
-                        unsafe_allow_html=True
+                    st.warning(
+                        f"→ {skill}"
                     )
 
             else:
@@ -1378,7 +1271,7 @@ elif page == "🗺️ Learning Roadmap":
 
     st.markdown(
         '<div class="subtitle">'
-        'Follow a structured path for your target career'
+        'Follow a structured learning path for your target career'
         '</div>',
         unsafe_allow_html=True
     )
@@ -1400,31 +1293,43 @@ elif page == "🗺️ Learning Roadmap":
     )
 
 
+    st.write(
+        f"{len(roadmap)} learning stages"
+    )
+
+
     for i, topic in enumerate(
         roadmap,
         start=1
     ):
 
-        st.markdown(
-            f"""
-            <div class="roadmap-item">
+        with st.container(border=True):
 
-                <div class="roadmap-step">
-                    STEP {i}
-                </div>
+            st.markdown(
+                f"### Step {i}: {topic}"
+            )
 
-                <div class="roadmap-topic">
-                    {topic}
-                </div>
+            if i == 1:
 
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
+                st.caption(
+                    "Start with the fundamentals."
+                )
+
+            elif i == len(roadmap):
+
+                st.caption(
+                    "Build a practical project using this knowledge."
+                )
+
+            else:
+
+                st.caption(
+                    "Learn this skill and practice it with examples."
+                )
 
 
     st.success(
-        "💡 Build practical projects while learning each skill."
+        "💡 Tip: Build practical projects while following the roadmap."
     )
 
 
@@ -1449,102 +1354,127 @@ elif page == "📊 Model Information":
     )
 
 
+    # Model metrics
+
     col1, col2, col3 = st.columns(3)
 
 
     with col1:
 
-        st.markdown(
-            """
-            <div class="metric-card">
-
-                <div class="metric-number">
-                    🌲
-                </div>
-
-                <div class="metric-label">
-                    Random Forest
-                </div>
-
-            </div>
-            """,
-            unsafe_allow_html=True
+        st.metric(
+            "🤖 Algorithm",
+            "Random Forest"
         )
 
 
     with col2:
 
-        st.markdown(
-            f"""
-            <div class="metric-card">
-
-                <div class="metric-number">
-                    {model_accuracy * 100:.1f}%
-                </div>
-
-                <div class="metric-label">
-                    Test Accuracy
-                </div>
-
-            </div>
-            """,
-            unsafe_allow_html=True
+        st.metric(
+            "📊 Test Accuracy",
+            f"{model_accuracy * 100:.1f}%"
         )
 
 
     with col3:
 
-        st.markdown(
-            f"""
-            <div class="metric-card">
-
-                <div class="metric-number">
-                    {len(dataset)}
-                </div>
-
-                <div class="metric-label">
-                    Dataset Records
-                </div>
-
-            </div>
-            """,
-            unsafe_allow_html=True
+        st.metric(
+            "📚 Dataset Size",
+            len(dataset)
         )
 
 
-    st.markdown("<br>", unsafe_allow_html=True)
+    st.divider()
 
+
+    # Dataset information
+
+    st.subheader(
+        "📋 Dataset Information"
+    )
+
+
+    st.write(
+        f"Number of records: **{len(dataset)}**"
+    )
+
+
+    st.write(
+        f"Number of features: **{len(dataset.columns) - 1}**"
+    )
+
+
+    st.write(
+        f"Number of career classes: **{len(model.classes_)}**"
+    )
+
+
+    st.divider()
+
+
+    # Features
 
     st.subheader(
         "📥 Input Features"
     )
 
 
-    features = [
-        "CGPA",
-        "Python",
-        "SQL",
-        "Machine Learning",
-        "Power BI",
-        "Java",
-        "Cloud",
-        "Cybersecurity",
-        "Communication",
-        "Projects",
-        "Internship",
-        "Interest"
-    ]
+    feature_descriptions = {
+
+        "CGPA":
+            "Academic performance of the student.",
+
+        "Python":
+            "Python programming skill.",
+
+        "SQL":
+            "SQL/database skill.",
+
+        "ML":
+            "Machine Learning knowledge.",
+
+        "PowerBI":
+            "Power BI and business intelligence skill.",
+
+        "Java":
+            "Java programming skill.",
+
+        "Cloud":
+            "Cloud computing knowledge.",
+
+        "Cybersecurity":
+            "Cybersecurity knowledge.",
+
+        "Communication":
+            "Communication skill.",
+
+        "Projects":
+            "Number of completed projects.",
+
+        "Internship":
+            "Internship experience.",
+
+        "Interest":
+            "Student's career interest."
+    }
 
 
-    for feature in features:
+    for feature, description in feature_descriptions.items():
 
-        st.write(
-            f"🔹 {feature}"
-        )
+        with st.container(border=True):
+
+            st.markdown(
+                f"### 🔹 {feature}"
+            )
+
+            st.caption(
+                description
+            )
 
 
     st.divider()
 
+
+    # Career classes
 
     st.subheader(
         "🎯 Career Classes"
@@ -1561,16 +1491,40 @@ elif page == "📊 Model Information":
     st.divider()
 
 
+    # Model explanation
+
     st.subheader(
-        "⚠️ Disclaimer"
+        "🤖 How Random Forest Works"
     )
+
+
+    st.write(
+        """
+        Random Forest is an ensemble Machine Learning
+        algorithm that combines multiple decision trees.
+
+        Each tree makes a prediction and the final result
+        is determined by combining the predictions of the
+        individual trees.
+
+        In this project, Random Forest is used as a
+        classification algorithm to predict the most
+        suitable career path for a student.
+        """
+    )
+
+
+    st.divider()
 
 
     st.warning(
         """
+        ⚠️ Disclaimer:
+
         This application is an educational project.
-        Career recommendations are guidance and are
-        not a guarantee of employment or career success.
+        The recommendation is intended for guidance and
+        demonstration purposes only. It does not guarantee
+        employment or career success.
         """
     )
 
@@ -1579,29 +1533,16 @@ elif page == "📊 Model Information":
 # FOOTER
 # ============================================================
 
-st.markdown(
-    """
-    <div class="footer">
+st.divider()
 
-        🎯 <b>AI Career Recommendation System</b>
+st.caption(
+    "🎯 AI Career Recommendation System"
+)
 
-        <br><br>
+st.caption(
+    "👨‍💻 Developed by Mayur Yadav | Artificial Intelligence & Data Science"
+)
 
-        👨‍💻 <b>Developed by Mayur Yadav</b>
-
-        <br><br>
-
-        Artificial Intelligence & Data Science
-
-        <br><br>
-
-        Powered by Machine Learning + Streamlit
-
-        <br><br>
-
-        Educational Project | 2026
-
-    </div>
-    """,
-    unsafe_allow_html=True
+st.caption(
+    "Powered by Machine Learning + Streamlit | Educational Project"
 )
