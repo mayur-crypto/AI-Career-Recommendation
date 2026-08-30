@@ -407,21 +407,44 @@ if page == "🏠 Home":
     )
 
     st.markdown(
-       st.markdown(
-    "### 👨‍💻 Project Developed By"
-)
+        '<div class="subtitle">'
+        'Personalized career recommendation using Machine Learning'
+        '</div>',
+        unsafe_allow_html=True
+    )
 
-st.markdown(
-    "**Mayur Yadav**  \n"
-    "Artificial Intelligence & Data Science  \n"
-    "🎯 AI Career Path Recommendation System"
-)
+    st.markdown(
+        """
+        <div class="developer-card">
+
+            <div class="developer-icon">
+                👨‍💻
+            </div>
+
+            <div>
+
+                <div class="developer-label">
+                    PROJECT DEVELOPED BY
+                </div>
+
+                <div class="developer-name">
+                    Mayur Yadav
+                </div>
+
+                <div class="developer-role">
+                    Artificial Intelligence & Data Science
+                </div>
+
+                <div class="developer-project">
+                    🎯 AI Career Path Recommendation System
+                </div>
+
+            </div>
+
         </div>
-
-    </div>
-    """,
-    unsafe_allow_html=True
-)
+        """,
+        unsafe_allow_html=True
+    )
 
     st.divider()
 
