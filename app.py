@@ -418,7 +418,7 @@ if page == "🏠 Home":
     <div class="developer-card">
 
         <div class="developer-icon">
-            👨‍💻
+            
         </div>
 
         <div class="developer-content">
