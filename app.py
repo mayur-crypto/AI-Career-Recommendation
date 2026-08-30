@@ -60,6 +60,25 @@ st.markdown(
 
 career_skills = {
 
+    "BI Developer": [
+        "SQL",
+        "Power BI",
+        "Data Visualization"
+    ],
+
+    "Cybersecurity Analyst": [
+        "Cybersecurity",
+        "Python",
+        "Networking"
+    ],
+
+    "Data Analyst": [
+        "Python",
+        "SQL",
+        "Power BI",
+        "Statistics"
+    ],
+
     "Data Scientist": [
         "Python",
         "SQL",
@@ -75,45 +94,13 @@ career_skills = {
         "Deep Learning"
     ],
 
-    "Data Analyst": [
-        "Python",
-        "SQL",
-        "Power BI",
-        "Statistics"
-    ],
-
-    "BI Developer": [
-        "SQL",
-        "Power BI",
-        "Data Visualization"
-    ],
-
     "Software Developer": [
         "Java",
         "Python",
-        "SQL"
-    ],
-
-    "Cloud Engineer": [
-        "Cloud",
-        "Python",
-        "Linux"
-    ],
-
-    "Cybersecurity Analyst": [
-        "Cybersecurity",
-        "Python",
-        "Networking"
-    ],
-
-    "AI Engineer": [
-        "Python",
-        "Machine Learning",
-        "Deep Learning",
-        "Cloud"
+        "SQL",
+        "Data Structures"
     ]
 }
-
 
 # ============================================================
 # LEARNING ROADMAP
@@ -121,27 +108,24 @@ career_skills = {
 
 roadmaps = {
 
-    "Data Scientist": [
-        "Python",
-        "NumPy and Pandas",
+    "BI Developer": [
         "SQL",
-        "Statistics",
-        "Machine Learning",
-        "Data Visualization",
-        "Deep Learning",
-        "Real-world Projects",
-        "Interview Preparation"
+        "Excel",
+        "Power BI",
+        "DAX",
+        "Data Modeling",
+        "Dashboard Development",
+        "BI Projects"
     ],
 
-    "ML Engineer": [
+    "Cybersecurity Analyst": [
+        "Computer Networks",
+        "Linux",
+        "Cybersecurity Fundamentals",
         "Python",
-        "NumPy and Pandas",
-        "Machine Learning",
-        "Deep Learning",
-        "APIs",
-        "Cloud Computing",
-        "MLOps",
-        "Real-world Projects"
+        "Security Tools",
+        "Ethical Security Concepts",
+        "Security Projects"
     ],
 
     "Data Analyst": [
@@ -152,61 +136,42 @@ roadmaps = {
         "Statistics",
         "Power BI",
         "Data Visualization",
-        "Dashboard Projects"
+        "Data Analysis Projects"
     ],
 
-    "BI Developer": [
-        "Excel",
-        "SQL",
-        "Database",
-        "Power BI",
-        "DAX",
-        "Data Modeling",
-        "Dashboard Projects"
-    ],
-
-    "Software Developer": [
-        "Programming Fundamentals",
-        "Java",
-        "Data Structures",
-        "Algorithms",
-        "SQL",
-        "Git and GitHub",
-        "Software Projects"
-    ],
-
-    "Cloud Engineer": [
+    "Data Scientist": [
         "Python",
-        "Linux",
-        "Networking",
-        "Cloud Fundamentals",
-        "AWS / Azure / GCP",
-        "Docker",
-        "DevOps"
+        "NumPy and Pandas",
+        "SQL",
+        "Statistics",
+        "Machine Learning",
+        "Data Visualization",
+        "Deep Learning",
+        "Data Science Projects"
     ],
 
-    "Cybersecurity Analyst": [
-        "Networking",
-        "Linux",
-        "Cybersecurity Fundamentals",
-        "Python",
-        "Security Concepts",
-        "Security Tools",
-        "Security Projects"
-    ],
-
-    "AI Engineer": [
+    "ML Engineer": [
         "Python",
         "NumPy and Pandas",
         "Machine Learning",
         "Deep Learning",
-        "NLP",
-        "Computer Vision",
-        "Cloud",
-        "AI Projects"
+        "APIs",
+        "Cloud Computing",
+        "MLOps",
+        "ML Projects"
+    ],
+
+    "Software Developer": [
+        "Programming Fundamentals",
+        "Python / Java",
+        "Data Structures",
+        "Algorithms",
+        "SQL",
+        "Git and GitHub",
+        "Software Development",
+        "Software Projects"
     ]
 }
-
 
 # ============================================================
 # SIDEBAR
