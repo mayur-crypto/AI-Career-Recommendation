@@ -3,16 +3,83 @@ import pandas as pd
 import joblib
 
 
-# ============================================================
-# LOAD TRAINED MODEL
-# ============================================================
+from sklearn.model_selection import train_test_split
+from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.pipeline import Pipeline
+from sklearn.ensemble import RandomForestClassifier
 
-model = joblib.load("career_model.pkl")
+
+@st.cache_resource
+def train_model():
+
+    df = pd.read_csv(
+        "career_recommendation_dataset_500.csv"
+    )
+
+    df = df.dropna()
+
+    X = df.drop(
+        "Career",
+        axis=1
+    )
+
+    y = df["Career"]
+
+    preprocessor = ColumnTransformer(
+
+        transformers=[
+            (
+                "interest",
+                OneHotEncoder(
+                    handle_unknown="ignore"
+                ),
+                ["Interest"]
+            )
+        ],
+
+        remainder="passthrough"
+    )
+
+    X_train, X_test, y_train, y_test = train_test_split(
+
+        X,
+        y,
+
+        test_size=0.20,
+
+        random_state=42,
+
+        stratify=y
+    )
+
+    model = Pipeline(
+
+        steps=[
+            (
+                "preprocessor",
+                preprocessor
+            ),
+
+            (
+                "model",
+                RandomForestClassifier(
+                    n_estimators=200,
+                    random_state=42
+                )
+            )
+        ]
+    )
+
+    model.fit(
+        X_train,
+        y_train
+    )
+
+    return model
 
 
-# ============================================================
-# PAGE CONFIGURATION
-# ============================================================
+model = train_model()
 
 st.set_page_config(
     page_title="AI Career Recommendation System",
