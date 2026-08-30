@@ -413,12 +413,12 @@ if page == "🏠 Home":
         unsafe_allow_html=True
     )
 
-    st.markdown(
+   st.markdown(
     """
     <div class="developer-card">
 
         <div class="developer-icon">
-            
+            👨‍💻
         </div>
 
         <div class="developer-content">
