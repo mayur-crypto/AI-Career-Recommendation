@@ -413,38 +413,17 @@ if page == "🏠 Home":
         unsafe_allow_html=True
     )
 
-    st.markdown(
-        """
-        <div class="developer-card">
+   st.markdown("## 👨‍💻 Project Developer")
 
-            <div class="developer-icon">
-                👨‍💻
-            </div>
+col1, col2 = st.columns([1, 4])
 
-            <div>
+with col1:
+    st.markdown("### 🎯")
 
-                <div class="developer-label">
-                    PROJECT DEVELOPED BY
-                </div>
-
-                <div class="developer-name">
-                    Mayur Yadav
-                </div>
-
-                <div class="developer-role">
-                    Artificial Intelligence & Data Science
-                </div>
-
-                <div class="developer-project">
-                    🎯 AI Career Path Recommendation System
-                </div>
-
-            </div>
-
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
+with col2:
+    st.markdown("### Mayur Yadav")
+    st.write("Artificial Intelligence & Data Science")
+    st.write("AI Career Path Recommendation System")
 
     st.divider()
 
