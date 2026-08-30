@@ -96,29 +96,151 @@ st.markdown(
     """
     <style>
 
-    .main-title {
-        text-align: center;
-        font-size: 42px;
-        font-weight: bold;
-        margin-bottom: 10px;
-    }
+   /* =========================================
+   DEVELOPER CARD
+   ========================================= */
 
-    .subtitle {
-        text-align: center;
-        font-size: 18px;
-        margin-bottom: 30px;
-    }
+.developer-card {
+    display: flex;
+    align-items: center;
+    gap: 25px;
 
-    .result-box {
-        padding: 20px;
-        border-radius: 15px;
-        text-align: center;
-    }
+    padding: 28px;
 
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+    margin: 25px 0;
+
+    border-radius: 18px;
+
+    background: linear-gradient(
+        135deg,
+        #17233a 0%,
+        #202f4b 50%,
+        #17233a 100%
+    );
+
+    border: 1px solid #3b4e6b;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.30);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* Decorative glow */
+
+.developer-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    background: rgba(100, 130, 255, 0.10);
+
+    top: -80px;
+    right: -60px;
+}
+
+
+/* Developer icon */
+
+.developer-icon {
+    width: 85px;
+    height: 85px;
+
+    min-width: 85px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        #405de6,
+        #7b61ff
+    );
+
+    font-size: 40px;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+
+/* Content */
+
+.developer-content {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* Small heading */
+
+.developer-label {
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: #8fa5c7;
+
+    margin-bottom: 5px;
+}
+
+
+/* Name */
+
+.developer-name {
+    font-size: 32px;
+
+    font-weight: 800;
+
+    color: #ffffff;
+
+    margin-bottom: 4px;
+}
+
+
+/* Course */
+
+.developer-role {
+    font-size: 15px;
+
+    color: #aebdd3;
+
+    margin-bottom: 12px;
+}
+
+
+/* Project */
+
+.developer-project {
+    display: inline-block;
+
+    padding: 8px 14px;
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    color: #dce6f5;
+
+    font-size: 13px;
+}
 
 
 # ============================================================
@@ -292,25 +414,37 @@ if page == "🏠 Home":
     )
 
     st.markdown(
-        """
-        <div class="card">
-            <div class="card-title">
-                👨‍💻 Project Developed By
+    """
+    <div class="developer-card">
+
+        <div class="developer-icon">
+            👨‍💻
+        </div>
+
+        <div class="developer-content">
+
+            <div class="developer-label">
+                PROJECT DEVELOPED BY
             </div>
 
-            <h2>Mayur Yadav</h2>
+            <div class="developer-name">
+                Mayur Yadav
+            </div>
 
-            <p>
+            <div class="developer-role">
                 Artificial Intelligence & Data Science
-            </p>
+            </div>
 
-            <p>
+            <div class="developer-project">
                 🎯 AI Career Path Recommendation System
-            </p>
+            </div>
+
         </div>
-        """,
-        unsafe_allow_html=True
-    )
+
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 
     st.divider()
 
