@@ -291,6 +291,27 @@ if page == "🏠 Home":
         unsafe_allow_html=True
     )
 
+    st.markdown(
+        """
+        <div class="card">
+            <div class="card-title">
+                👨‍💻 Project Developed By
+            </div>
+
+            <h2>Mayur Yadav</h2>
+
+            <p>
+                Artificial Intelligence & Data Science
+            </p>
+
+            <p>
+                🎯 AI Career Path Recommendation System
+            </p>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
     st.divider()
 
     col1, col2, col3 = st.columns(3)
